@@ -8,8 +8,8 @@ The stack:
 * leiningen 2.3.4
 * pallet 0.8.0-RC.9
 * pallet-vmfest 0.4.0-alpha.1
-* clojure 1.6.0 (1.5.1 same result)
-* VirtualBox 4.3.12 (4.3.4 same result)
+* clojure 1.6.0
+* VirtualBox 4.3.12
 * Java 7u55
 * MacOS 10.9.3
 
@@ -31,3 +31,5 @@ But when we converge down to 0 nodes...
     (down)
 
 ... pallet-vmfest is told that VirtualBox has received an 'invalid managed object reference', to an object with an id of the form xxxxxxxxxxxxxxxx-0000000000000xxx, and the rest of the operation fails.  See example logs at https://gist.github.com/jonoflayham/9774cf714c9049af2ac0.
+
+The same thing happens with Clojure 1.5.1 and VirtualBox 4.3.4.
