@@ -32,12 +32,12 @@ $ lein repl
 But when we converge down to 0 nodes...
 
 ``` clojure
-    (down)
+(down)
 ```
 
 ... pallet-vmfest is told that VirtualBox has received an 'invalid managed object reference', to an object with an id of the form xxxxxxxxxxxxxxxx-0000000000000xxx, and the rest of the operation fails.  Same thing happens with Clojure 1.5.1 and/or VirtualBox 4.3.4.
 
-Log output:
+Log output (also [as a gist](https://gist.github.com/jonoflayham/9774cf714c9049af2ac0)):
 
 ```
 2014-05-25 18:48:28,359 ERROR [operate-20] v.v.conditions Cannot parse the error since the object is unavailable org.virtualbox_4_3.VBoxException: VirtualBox error: Invalid managed object reference "523cfd7b52707877-0000000000000427"
