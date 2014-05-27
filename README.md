@@ -81,4 +81,4 @@ clojure.lang.ExceptionInfo: throw+: {:message "Cannot open session with machine 
 
 Log output from verbose vboxwebsrv follows.  This is for a different run exhibiting the same problem.  Search for '''196f7''', which is the offending managed object reference. 
 
-For vboxwebsrv logs, see [this gist](gist:18ff04d42cc73e54dadb).
+For vboxwebsrv logs, see [this gist](https://gist.github.com/jonoflayham/18ff04d42cc73e54dadb).
