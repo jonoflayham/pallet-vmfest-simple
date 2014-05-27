@@ -8,8 +8,8 @@ The stack:
 * leiningen 2.3.4
 * pallet 0.8.0-RC.9
 * pallet-vmfest 0.4.0-alpha.1
-* clojure 1.6.0
-* VirtualBox 4.3.12
+* clojure 1.6.0 or 1.5.1
+* VirtualBox 4.3.12 or 4.3.4
 * Java 7u55
 * MacOS 10.9.3
 
@@ -29,13 +29,21 @@ $ lein repl
 (up)
 ```
 
-But when we converge down to 0 nodes...
+But when we converge down to 0 nodes in the same REPL session...
 
 ``` clojure
-(down)
+(down)  ; i.e.  (pallet.api/converge {small-group 0} :compute compute-service-provider))
 ```
 
-... pallet-vmfest is told that VirtualBox has received an 'invalid managed object reference', to an object with an id of the form xxxxxxxxxxxxxxxx-0000000000000xxx, and the rest of the operation fails.  Same thing happens with Clojure 1.5.1 and/or VirtualBox 4.3.4.
+then...
+
+* an exception is thrown.  pallet-vmfest is told that VirtualBox has received an 'invalid managed object reference', to an object with an id of the form xxxxxxxxxxxxxxxx-0000000000000xxx
+* that id is always the last in a sequence of 7 or 8 such ids which appear in the vboxwebsrv logs for this operation.  It's as if something takes it one id too far!
+* the machine is powered off, but not deleted
+* a subsequent convergence to 1 node creates a new instance alongside the old one, named the same
+* logs are as shown below.
+
+We see this behaviour 75% of the time.  Does that mean it's a race condition?  The other 25%, everything works like a dream: the machine is powered down and deleted just fine, and there are no errors.  It seems that if we execute the same steps but use a new REPL session for the converge to zero, the problem happens more often, but that's just an impression.
 
 Log output (also [as a gist](https://gist.github.com/jonoflayham/9774cf714c9049af2ac0)):
 
