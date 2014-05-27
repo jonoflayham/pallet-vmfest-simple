@@ -81,12 +81,4 @@ clojure.lang.ExceptionInfo: throw+: {:message "Cannot open session with machine 
 
 Log output from verbose vboxwebsrv follows.  This is for a different run exhibiting the same problem.  Search for '''196f7''', which is the offending managed object reference. 
 
-'''
-From Pallet:
-
-user=> (pallet.api/converge {small-centos-group 0} :compute @compute-service-provider)
-18:40:29.442 [operate-21] ERROR vmfest.virtualbox.conditions - Cannot parse the error since the object is unavailable org.virtualbox_4_3.VBoxException: VirtualBox error: Invalid managed object reference "bc3f7732304b19b4-00000000000196f7"
-18:40:29.448 [operate-21] WARN  pallet.core.primitives - async-fsm failed
-clojure.lang.ExceptionInfo: throw+: {:message "Cannot open session with machine 'a294397b-d2f9-4fc8-b6a6-bbae171183e9' reason:VirtualBox error: rc=0x80070005 The object is not ready (0x80070005)", :full-message "Cannot open session with machine 'a294397b-d2f9-4fc8-b6a6-bbae171183e9' reason:VirtualBox error: rc=0x80070005 The object is not ready (0x80070005): VirtualBox error: rc=0x80070005 The object is not ready (0x80070005)", :ca.......
-
-For vboxwebsrv logs, see gist:18ff04d42cc73e54dadb.
+For vboxwebsrv logs, see [this gist](gist:18ff04d42cc73e54dadb).
