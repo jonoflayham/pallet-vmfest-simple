@@ -79,4 +79,4 @@ clojure.lang.ExceptionInfo: throw+: {:message "Cannot open session with machine 
 	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_55]
 ```
 
-For log output from verbose vboxwebsrv, see [this gist](https://gist.github.com/jonoflayham/18ff04d42cc73e54dadb).  This is for a different run exhibiting the same problem.  Search for '''196f7''', which is the offending managed object reference.
+For log output from verbose vboxwebsrv, see [this gist](https://gist.github.com/jonoflayham/18ff04d42cc73e54dadb).  This is for a different run exhibiting the same problem.  Search for ```196f7```, which is the offending managed object reference.
